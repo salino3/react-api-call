@@ -1,10 +1,14 @@
 import { Routes, Route } from "react-router-dom";
-import { HomeLayout } from "../layout";
+import { HomeLayout, TaskInfoLayout } from "@/layout";
+import { switchRoutes } from "./constants-routes";
 
 export const AppRouter = () => {
+
+
   return (
-  <Routes>
- <Route path={'/'}  element={<HomeLayout />} />
-  </Routes>
-    );
+    <Routes>
+      <Route path={switchRoutes.root} element={<HomeLayout />} />
+      <Route path={`${switchRoutes.taskInfo}/:id`} element={<TaskInfoLayout />} />
+    </Routes>
+  );
 };
