@@ -1,7 +1,8 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import {useEffect, useContext} from 'react';
 import { GlobalContext } from '@/core';
+import { switchRoutes } from '@/router/constants-routes';
 import './task-info.styles.css';
 
 export const TaskInfo = () => {
@@ -21,6 +22,7 @@ export const TaskInfo = () => {
     return (
       <>
         <h1>Task Info</h1>
+        <Link to={switchRoutes.root}>Go back</Link>
         <div>
           <h3>
             <span className="spanKey">Title: </span>
@@ -30,13 +32,14 @@ export const TaskInfo = () => {
             <span className="spanKey">user ID: </span>
             <span className="spanValue">{task?.userId}</span>
           </h3>
-          <h3>
+          <h3 className="statusContainer">
             <span className="spanKey">status: </span>
-            <span className="spanValue">
+            <span className="spanValue spanStatus">
               {task?.completed ? "Complete" : "Uncomplete"}
             </span>
-            &nbsp;
-            <button onClick={() =>  changeStatusTask(task.id)}>change status</button>
+            <button onClick={() => changeStatusTask(task.id)}>
+              change status
+            </button>
           </h3>
         </div>
       </>

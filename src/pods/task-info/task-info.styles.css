@@ -5,4 +5,25 @@
 
 .spanValue {
     color: orange;
+
+}
+
+.statusContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.statusContainer span, .statusContainer button {
+
+}
+
+.spanStatus {
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+}
+
+.statusContainer button {
+    cursor: pointer;
 }
