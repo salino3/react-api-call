@@ -6,7 +6,7 @@ import { CHANGE_STATUS_TASK, GET_TASK, GET_TASKS, initialState } from "./types";
 export const MyProvider = ({children}) => {
 
 
-    const [state, dispatch] = React.useReducer(MyReducer, );
+    const [state, dispatch] = React.useReducer(MyReducer, initialState);
     
     const fetchData = async () => {
         const response = await fetch("https://jsonplaceholder.typicode.com/todos");
