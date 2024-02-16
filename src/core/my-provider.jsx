@@ -9,7 +9,7 @@ export const MyProvider = ({children}) => {
     const [state, dispatch] = React.useReducer(MyReducer, );
     
     const fetchData = async () => {
-        const response = await fetch("https://jsonplaceholder.typicode.com/todos", initialState);
+        const response = await fetch("https://jsonplaceholder.typicode.com/todos");
             const res = await response.json();
             dispatch({
               type: GET_TASKS,
